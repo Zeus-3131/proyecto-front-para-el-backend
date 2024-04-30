@@ -64,21 +64,21 @@
 // export default ItemList;
 
 
-const ItemList = ({ initialProducts }) => {
-  const [products, setProducts] = useState(initialProducts);
+const ItemList = () => { //{ initialProducts }
+  // const [products, setProducts] = useState(initialProducts);
 
-  useEffect(() => {
-    // Llamada a la API para obtener los productos
-    axios.get("http://localhost:8080/api/products")
-      .then((res) => {
-        // Actualizar el estado con los productos obtenidos de la API
-        setProducts(res.data.response.docs);
+  // useEffect(() => {
+  //   // Llamada a la API para obtener los productos
+  //   axios.get("http://localhost:8080/api/products")
+  //     .then((res) => {
+  //       // Actualizar el estado con los productos obtenidos de la API
+  //       setProducts(res.data.response.docs);
         
-      })
-      .catch((err) => {
-        console.log("Error fetching products:", err);
-      });
-  }, []); // Ejecutar solo una vez al montar el componente
+  //     })
+  //     .catch((err) => {
+  //       console.log("Error fetching products:", err);
+  //     });
+  // }, []); // Ejecutar solo una vez al montar el componente
 
   return (
     <div className="ordenarProductos">
