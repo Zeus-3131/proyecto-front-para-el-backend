@@ -18,10 +18,10 @@ export const CarritoProvider = ({children}) => {
   const agregarAlCarrrito = (item, cantidad) => {
     const productoExistente = carrito.find((prod) => prod.item.id === item.id);
 
-    if (!productoExistente) {
+    if (!productoExistente) { 
       setCarrito((prev) => [...prev, { item, cantidad }]);
       setCantidadTotal((prev) => prev + cantidad);
-      setTotal((prev) => prev + item.precio * cantidad);
+      setTotal((prev) => prev + item.precio * cantidad); 
     } else {
       const carritoActualizado = carrito.map((prod) => {
         if (prod.item.id === item.id) {

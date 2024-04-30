@@ -42,7 +42,7 @@ const Checkout = () => {
         cantidad: producto.cantidad,
       })),
       total: total,
-      fecha: new Date(),
+      fecha: new Date(), 
       nombre,
       apellido,
       telefono,

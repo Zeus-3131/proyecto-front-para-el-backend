@@ -183,33 +183,39 @@ const Inicio = () => {
           <div className="fondoSeccion4">
             <div className="contenSeccion4">
               <h2 className="h2Seccion4">
-                <span style={{display:"flex", justifyContent:"center", fontSize:"1.5rem", color:"red"}}>
-                  Colección especial
-                  de zapatos
+                <span
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    fontSize: "1.5rem",
+                    color: "red",
+                  }}
+                >
+                  Colección especial de zapatos
                 </span>
               </h2>
               <div className="contenInfo4">
                 <TarjetaComprasAmplia
-                 nombre="Future Rider"
-                 precio="300000"
-                 id="4"
-                 info="/Item/4"
-                 imagen="https://content.stylitics.com/images/items/15039664?size=large"
+                  nombre="Future Rider"
+                  precio="300000"
+                  id="4"
+                  info="/Item/4"
+                  imagen="https://content.stylitics.com/images/items/15039664?size=large"
                 />
                 <TarjetaComprasAmplia
-                 nombre="RS-Fast"
-                 precio="500000"
-                 id="5"
-                 info="/Item/5"
-                 imagen="https://acdn.mitiendanube.com/stores/001/374/566/products/tenis-puma-california-original-mujer-color-blanco-negro-tienda-onlineshoppingcenterg-colombia-centro-de-compras-en-linea1-0f94547307b5aca08a16672806569504-640-0.png"
+                  nombre="RS-Fast"
+                  precio="500000"
+                  id="5"
+                  info="/Item/5"
+                  imagen="https://acdn.mitiendanube.com/stores/001/374/566/products/tenis-puma-california-original-mujer-color-blanco-negro-tienda-onlineshoppingcenterg-colombia-centro-de-compras-en-linea1-0f94547307b5aca08a16672806569504-640-0.png"
                 />
-                <TarjetaComprasAmplia 
-                 nombre="Suede Classic"
-                 precio="600000"
-                 id="6"
-                 info="/Item/6"
-                 imagen="https://balonmanoproshop.com/cdn/shop/files/Zapatillas-de-interior-Accelerate-NITRO-SQD-11.png?v=1697038607"
-               />
+                <TarjetaComprasAmplia
+                  nombre="Suede Classic"
+                  precio="600000"
+                  id="6"
+                  info="/Item/6"
+                  imagen="https://balonmanoproshop.com/cdn/shop/files/Zapatillas-de-interior-Accelerate-NITRO-SQD-11.png?v=1697038607"
+                />
               </div>
             </div>
           </div>

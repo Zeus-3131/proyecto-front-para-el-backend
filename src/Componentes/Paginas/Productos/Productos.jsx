@@ -4,20 +4,30 @@ import { NavLink } from "react-router-dom";
 import "./Productos.css";
 import Aside from "../../Aditamentos/Aside/Aside";
 import Footer from "../../Footer/Footer";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 // segunda entrega
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ItemDetailContainer from "../../ItemDetailContainer/ItemDetailContainer";
 
 const Productos = () => {
-  const componentesDelItemListContainer=false;
+  const componentesDelItemListContainer = false;
+
+  // const [products, setProducts] = useState([]);
+  // useEffect(() => {
+  //   axios("http://localhost:8080/api/products")
+  //     .then((res) =>setProducts(res.data.response.docs))
+  //     .catch((err) => console.log(err));
+  // }, []);
+  
   return (
     <>
       <Navbar />
       <div className="ContenedorNavegacionProductos">
         <nav className="navProductos">
           <div className="col-12">
-            <NavLink className="enlaceP" to="/"> 
+            <NavLink className="enlaceP" to="/">
               Inicio
             </NavLink>
             <span>
@@ -33,7 +43,9 @@ const Productos = () => {
         <div className="contenedormainProductos">
           <Aside />
           <div className="contenedorDeProductos">
-            <ItemListContainer mostrarComponentes={componentesDelItemListContainer} />
+            <ItemListContainer
+              mostrarComponentes={componentesDelItemListContainer}
+            />
           </div>
         </div>
       </main>

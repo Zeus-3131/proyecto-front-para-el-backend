@@ -37,7 +37,7 @@ const Cart = () => {
       <Navbar />
 
       <div className="my-cart-container">
-        {carrito.map((producto) => (
+        {carrito.map((producto) => ( 
           <div className="my-product" key={producto.item.id}>
             <CartItem {...producto} />
             <button className="my-button" onClick={() => eliminarProducto(producto.item.id)}>

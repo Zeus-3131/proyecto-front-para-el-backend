@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
 
     const {idItem}= useParams();
 
-    useEffect(()=>{
+    useEffect(()=>{ 
       // const nuevoDoc = doc(db, "Inventario", idItem);
 
       getDoc(nuevoDoc)
