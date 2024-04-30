@@ -6,18 +6,18 @@
 
 // const ItemList = ({ products }) => {
   
-  const [product, setProducts] = useState([]);
-  const [prev,setPrev]=useState(null);
-  const [next,setNext]=useState(null);
-  useEffect(() => {
-    axios("http://localhost:8080/api/products")
-      .then((res) => {
-        setProducts(res.data.response.docs);
-        setPrev(res.data.response.prevPage);
-        setNext(res.data.response.nextPage);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  // const [product, setProducts] = useState([]);
+  // const [prev,setPrev]=useState(null);
+  // const [next,setNext]=useState(null);
+  // useEffect(() => {
+  //   axios("http://localhost:8080/api/products")
+  //     .then((res) => {
+  //       setProducts(res.data.response.docs);
+  //       setPrev(res.data.response.prevPage);
+  //       setNext(res.data.response.nextPage);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, []);
 
 //   return (
 //     <div className="ordenarProductos">
