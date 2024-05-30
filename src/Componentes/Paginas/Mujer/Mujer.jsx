@@ -1,35 +1,43 @@
-import Navbar from "../../Navbar/Navbar"
-import { NavLink } from "react-router-dom"
-import "./Mujer.css"
-import Footer from "../../Footer/Footer"
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import ItemListTienda from "../../ItemListTienda/ItemListTienda"
-// import {collection, getDocs, where, query} from "firebase/firestore"
-// import { db } from "../../../services/config";
+import Navbar from "../../Navbar/Navbar";
+import { NavLink } from "react-router-dom";
+import "./Mujer.css";
+import Footer from "../../Footer/Footer";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import ItemListTienda from "../../ItemListTienda/ItemListTienda";
 
+const Mujer = ({ mostrarComponentesTienda = true }) => {
+  const [productos, setProductos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  useEffect(() => {
+    const fetchProductos = async () => {
+      try {
+        // Realizar la solicitud a la API filtrando los productos por idcat=F
+        const res = await axios.get("http://localhost:8080/api/products?idcat=F");
+        // console.log("API Response Data:", JSON.stringify(res.data, null, 2)); // Log detallado de la respuesta completa
 
-const Mujer = ({mostrarComponentesTienda = true}) => {
-  // const [productos, setProductos] = useState([]);
-  // const { idCategoria } = useParams();
+        // Verificar si la respuesta contiene un array de productos
+        if (res.data.status === 200 && res.data.all && Array.isArray(res.data.all.docs)) {
+          setProductos(res.data.all.docs);
+        } else {
+          console.error("Unexpected API response format:", res.data);
+          setError("Formato de respuesta de API inesperado");
+        }
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching products:", err);
+        setError("Error al obtener los productos");
+        setLoading(false);
+      }
+    };
+    fetchProductos();
+  }, []);
 
-  // useEffect(()=>{
-  //   // const misProductos = idCategoria ? query(collection(db, "Inventario"), where("idcat", "==", idCategoria)): collection(db, "Inventario");
-
-  //   getDocs(misProductos)
-  //    .then(res=>{
-  //     const nuevosProductos = res.docs.map(doc=>{
-  //       const data = doc.data();
-  //       return {id:doc.id, ...data}
-  //     })
-  //     setProductos(nuevosProductos);
-  //    })
-  //    .catch(error=> console.log("Error",error))
-  // },[idCategoria])
   return (
     <div>
-       {mostrarComponentesTienda && <Navbar />}
+      {mostrarComponentesTienda && <Navbar />}
       <div className="ContenedorNavegacionMujer">
         <nav className="navProductosMujer">
           <div className="col-12Mujer">
@@ -47,12 +55,18 @@ const Mujer = ({mostrarComponentesTienda = true}) => {
       <div className="contenedorDivDelListMujer">
         <div className="contenedorProductosItemListMujer">
           <h2 className="itemh2Mujer">Productos para Mujer</h2>
-          {/* <ItemListTienda productos={productos} /> */}
+          {loading ? (
+            <p>Cargando productos...</p>
+          ) : error ? (
+            <p>{error}</p>
+          ) : (
+            <ItemListTienda productos={productos} />
+          )}
         </div>
       </div>
       {mostrarComponentesTienda && <Footer />}
     </div>
-  )
-}
+  );
+};
 
-export default Mujer
+export default Mujer;

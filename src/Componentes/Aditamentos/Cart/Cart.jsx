@@ -3,48 +3,48 @@ import { CarritoContext } from "../../../Context/CarritoContext";
 import "./Cart.css";
 import { Link } from "react-router-dom";
 import CartItem from "../CartItem/CartItem";
-// import Navbar from "../../Navbar/Navbar";
+import Navbar from "../../Navbar/Navbar";
 import Footer from "../../Footer/Footer";
 
 const Cart = () => {
-  const { carrito, vaciarCarrito, total, cantidadTotal, eliminarProducto } = useContext(CarritoContext);
-  const [mostrarBotonFinalizar, setMostrarBotonFinalizar] = useState(true);
+//   const { carrito, vaciarCarrito, total, cantidadTotal, eliminarProducto } = useContext(CarritoContext);
+//   const [mostrarBotonFinalizar, setMostrarBotonFinalizar] = useState(true);
 
-  useEffect(() => {
-    // Oculta el botón "Finalizar Compra" si el carrito está vacío
-    setMostrarBotonFinalizar(cantidadTotal > 0);
-  }, [cantidadTotal]);
+//   useEffect(() => {
+//     // Oculta el botón "Finalizar Compra" si el carrito está vacío
+//     setMostrarBotonFinalizar(cantidadTotal > 0);
+//   }, [cantidadTotal]);
 
-  const manejarVaciarCarrito = () => {
-    vaciarCarrito();
-    setMostrarBotonFinalizar(false);
-  };
+//   const manejarVaciarCarrito = () => {
+//     vaciarCarrito();
+//     setMostrarBotonFinalizar(false);
+//   };
 
-  useEffect(() => {
-    if (cantidadTotal === 0) {
-      const confirmar = window.confirm("No hay productos en el carrito. ¿Deseas ver productos?");
+//   useEffect(() => {
+//     if (cantidadTotal === 0) {
+//       const confirmar = window.confirm("No hay productos en el carrito. ¿Deseas ver productos?");
       
-      if (confirmar) {
-        // Si el usuario hace clic en "Aceptar", redirige a la página de productos
-        window.location.href = "/Productos";
-      }
-      // No es necesario manejar la otra opción, ya que si el usuario hace clic en "Cancelar" o cierra el cuadro de diálogo, no hacemos nada.
-    }
-  }, [cantidadTotal]);
+//       if (confirmar) {
+//         // Si el usuario hace clic en "Aceptar", redirige a la página de productos
+//         window.location.href = "/Productos";
+//       }
+//       // No es necesario manejar la otra opción, ya que si el usuario hace clic en "Cancelar" o cierra el cuadro de diálogo, no hacemos nada.
+//     }
+//   }, [cantidadTotal]);
 
   return (
     <div>
       <Navbar />
 
       <div className="my-cart-container">
-        {carrito.map((producto) => ( 
+        {/* {carrito.map((producto) => ( 
           <div className="my-product" key={producto.item.id}>
             <CartItem {...producto} />
             <button className="my-button" onClick={() => eliminarProducto(producto.item.id)}>
               Eliminar
             </button>
           </div>
-        ))}
+        ))} */}
 
         <div className="my-total">
           <p className="CartP">

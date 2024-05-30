@@ -1,10 +1,11 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import "./Item.css";
-import {Link} from "react-router-dom"
 
-const Item = ({ _id, nombre, precio, imagen, idCategoria, stock }) => {
+const Item = ({ _id, nombre, precio, imagen, idcat, stock }) => {
   let brandClass = '';
 
-  switch (idCategoria) { 
+  switch (idcat) { 
     case '1':
       brandClass = 'nikeStyle';
       break;
@@ -26,15 +27,8 @@ const Item = ({ _id, nombre, precio, imagen, idCategoria, stock }) => {
     default:
       break;
   }
-  return (
-    // <div>
-    //     <img src={imagen} alt={nombre} />
-    //     <h3>nombre:{nombre} </h3>
-    //     <p>precio:{precio}</p>                ejemplo de la segunda entrega
-    //     <p>id:{id}</p>
-    //     <button>ver detalles</button>
-    // </div>
 
+  return (
     <div className="contenedorTarjeta">
       <div>
         <ul className="ulTarjeta">
@@ -64,12 +58,9 @@ const Item = ({ _id, nombre, precio, imagen, idCategoria, stock }) => {
                       <div className="size contenInfo">
                         <h3>Precio : {precio}</h3>
                         <h3>Id : {_id}</h3>
-                        {/* <h3>Stock:{stock}</h3> ajustar con css para que se visualice el stock sin descuadrar la tarjeta*/} 
+                        <h3>Stock: {stock}</h3>
                       </div>
-                      {/* <a className="contenInfo" href="#">
-                        Comprar Ahora
-                      </a> */}
-                      <Link >Comprar Ahora</Link> {/*to={`/Item/${id}`} */}
+                      <Link to={`/Item/${_id}`}>Comprar Ahora</Link>
                     </div>
                   </div>
                 </div>
