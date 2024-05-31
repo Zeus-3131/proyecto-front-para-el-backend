@@ -74,3 +74,5 @@ const Item = ({ _id, nombre, precio, imagen, idcat, stock }) => {
 };
 
 export default Item;
+
+

@@ -9,7 +9,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import "./Checkout.css";
-
+ 
 const Checkout = () => {
   const { carrito, vaciarCarrito, total, cantidadTotal } =
     useContext(CarritoContext);

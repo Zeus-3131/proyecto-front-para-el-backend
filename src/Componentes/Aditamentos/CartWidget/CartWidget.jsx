@@ -18,9 +18,10 @@ const CartWidget = () => {
             {cantidadTotal > 0 && <strong className="carritost">{cantidadTotal}</strong>}
           </li>
         </Link>
-      </ul>
+      </ul> 
     </div>
   );
 };
 
 export default CartWidget;
+
